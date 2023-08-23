@@ -21,7 +21,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
-       - name: Install modules
+      - name: Install modules
         run: pnpm install
       - name: Build
         run: pnpm build
