@@ -27,7 +27,7 @@ describe('color', () => {
         .classes()
         .map((v) => v.replace('\n', ''))
         .includes('bg-blue-500')
-    ).toBe(false)
+    ).toBe(true)
   })
 
   test('red', () => {
