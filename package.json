@@ -11,6 +11,7 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "test": "vitest --coverage",
+    "test:run": "vitest run",
     "lint": "eslint --ext .ts,.tsx,.vue src",
     "lint:fix": "eslint --ext .ts,.tsx,.vue src --fix",
     "prepare": "husky install"
