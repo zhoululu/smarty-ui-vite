@@ -2,3 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx --no -- commitlint --edit "$1"
+
+# 在commit之前验证commit消息格式是否符合规范

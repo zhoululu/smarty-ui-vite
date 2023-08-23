@@ -2,3 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 pnpm test:run
+
+# 在push之前验证是否通过单元测试

@@ -2,3 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm lint
+
+# 在commit之前验证代码格式是否通过eslint检测
