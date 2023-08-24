@@ -17,6 +17,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -26,9 +29,11 @@ jobs:
       - name: Build
         run: pnpm build
       - name: "Publish to the npm registry"
-        uses: primer/publish@3.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
+        uses: JS-DevTools/npm-publish@v2
         with:
-          default_branch: "publish-smarty-ui-vite"
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #   NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
+        # with:
+        #   default_branch: "publish-smarty-ui-vite"
